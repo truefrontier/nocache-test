@@ -1,0 +1,8 @@
+name: Admin
+super: true
+id: ae713506-10d1-40d6-acf3-5426303fc4c4
+password_hash: $2y$10$eplIAeU8xsGf8s9gP8cVVuPyunfNNqjNptda9rABtPTjER/81.fPO
+preferences:
+  collections:
+    books:
+      after_save: create_another

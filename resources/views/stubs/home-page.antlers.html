@@ -1,0 +1,19 @@
+<script src="//unpkg.com/alpinejs" defer></script>
+<div x-data>
+{{ cache key="books" }}
+{{ collection:books scope="book" }}
+	<div>
+		{{ nocache }}
+		<form action="/addBook" method="POST">
+			{{ csrf_field}}
+			<input type="hidden" value="{{ book.id }}" name="id">
+			<label for="is_added" @click="$el.parentElement.submit()">
+				<input type="checkbox" value="1" name="is_added" {{ book.is_added ? 'checked' : '' }}>
+				{{ book.title }}
+			</label>
+		</form>
+		{{ /nocache }}
+	</div>
+{{ /collection:books }}
+{{ /cache }}
+</div>
